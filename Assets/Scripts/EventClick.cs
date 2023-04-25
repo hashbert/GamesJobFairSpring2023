@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private Outline _outline;
+    [SerializeField] private Outline _outline;
 
     private void Awake()
     {
@@ -18,8 +18,8 @@ public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
-        //_outline.enabled = false;
+        _outline.enabled = false;
+        print("pointer exited human");
     }
     public void OnPointerUp(PointerEventData eventData)
     {
