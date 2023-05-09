@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Human : MonoBehaviour
 {
+    private bool _needsFood;
     [SerializeField] private InputActionReference _select;
     // Start is called before the first frame update
 
