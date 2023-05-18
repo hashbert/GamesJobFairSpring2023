@@ -6,8 +6,7 @@ using UnityEngine.EventSystems;
 public class EventClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Outline _outline;
-
-    private void Awake()
+    private void Start()
     {
         _outline = GetComponent<Outline>();
     }

@@ -6,9 +6,21 @@ using UnityEngine.InputSystem;
 
 public class Human : MonoBehaviour
 {
-    private bool _needsFood;
+    [SerializeField] private float _minHungerDelayTime = 3f;
+    [SerializeField] private float _maxHungerDelayTime = 7f;
+    [SerializeField] private float _randomHungerDelayTime = 7f;
     [SerializeField] private InputActionReference _select;
     // Start is called before the first frame update
+
+    private enum HumanState
+    {
+        Idle,
+        Hungry,
+        Walking,
+        GivingThanks
+    }
+
+    private HumanState _state = HumanState.Idle;
 
     private void OnEnable()
     {
@@ -28,12 +40,35 @@ public class Human : MonoBehaviour
 
     void Start()
     {
-        
+        _randomHungerDelayTime = RandomHungerDelayTime(_minHungerDelayTime, _maxHungerDelayTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        switch (_state)
+        {
+            case HumanState.Idle:
+                _randomHungerDelayTime -= Time.deltaTime;
+                if (_randomHungerDelayTime < 0)
+                {
+                    _randomHungerDelayTime = RandomHungerDelayTime(_minHungerDelayTime, _maxHungerDelayTime);
+                    _state = HumanState.Hungry;
+                }
+                break;
+            case HumanState.Hungry:
+                break;
+            case HumanState.Walking:
+                break;
+            case HumanState.GivingThanks:
+                break;
+            default:
+                break;
+        }
+    }
+
+    private float RandomHungerDelayTime(float x, float y)
+    {
+        return UnityEngine.Random.Range(x, y);
     }
 }

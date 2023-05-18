@@ -3291,7 +3291,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088102515}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc646445d7362b342aecafc7bda7242a, type: 3}
   m_Name: 
@@ -3309,6 +3309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a7226773920764b9a345e3e9da5743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _minHungerDelayTime: 3
+  _maxHungerDelayTime: 7
+  _randomHungerDelayTime: 7
   _select: {fileID: -6233029103359927482, guid: b18b2890123f88f4ba4993d4000334a0,
     type: 3}
 --- !u!136 &1088102518
@@ -3322,9 +3325,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2.1409292
+  m_Height: 3.421477
   m_Direction: 1
-  m_Center: {x: 0, y: 1.0705979, z: 0}
+  m_Center: {x: -0, y: 1.7108718, z: -0}
 --- !u!114 &1088102519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3332,15 +3335,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088102515}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.9456402, g: 1, b: 0, a: 1}
+  outlineColor: {r: 1, g: 1, b: 0, a: 1}
   outlineWidth: 5
-  precomputeOutline: 1
+  precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
 --- !u!4 &1088102520
