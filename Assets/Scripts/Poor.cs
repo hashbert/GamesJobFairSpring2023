@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Human : MonoBehaviour
+public class Poor : MonoBehaviour
 {
     [SerializeField] private float _minHungerDelayTime = 3f;
     [SerializeField] private float _maxHungerDelayTime = 7f;
@@ -17,25 +17,25 @@ public class Human : MonoBehaviour
         Idle,
         Hungry,
         Walking,
-        GivingThanks
+        Thankful
     }
 
     private HumanState _state = HumanState.Idle;
 
-    private void OnEnable()
-    {
-        _select.action.Enable();
-        _select.action.started += OnSelectObject;
-    }
-    private void OnDisable()
-    {
-        _select.action.Disable();
-        _select.action.started -= OnSelectObject;
-    }
-    private void OnSelectObject(InputAction.CallbackContext obj)
-    {
-        //print("I was clicked!");
-    }
+    //private void OnEnable()
+    //{
+    //    _select.action.Enable();
+    //    _select.action.started += OnSelectObject;
+    //}
+    //private void OnDisable()
+    //{
+    //    _select.action.Disable();
+    //    _select.action.started -= OnSelectObject;
+    //}
+    //private void OnSelectObject(InputAction.CallbackContext obj)
+    //{
+    //    //print("I was clicked!");
+    //}
 
 
     void Start()
@@ -60,7 +60,7 @@ public class Human : MonoBehaviour
                 break;
             case HumanState.Walking:
                 break;
-            case HumanState.GivingThanks:
+            case HumanState.Thankful:
                 break;
             default:
                 break;
